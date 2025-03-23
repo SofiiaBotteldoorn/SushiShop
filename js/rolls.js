@@ -111,6 +111,8 @@ document.addEventListener("click", function (event) {
             else if (event.target.closest(".maandje-wrapper") && parseInt(artikelTeller.innerText) === 1) {
                 event.target.closest(".maandje-item").remove();
                 berekenPrijs();
+                slaMaandjeOp();
+
                 //meldingen voor lege maandje
                 const aantalArtikels = document.querySelector(".maandje-wrapper");
                 if (aantalArtikels.children.length === 0) {
@@ -126,11 +128,72 @@ document.addEventListener("click", function (event) {
     //Als er op + of - binnen maandje geclickt(artikels kunnen toegevoegd of verwijderd zijn ook vanuit maandje)
     if (event.target.hasAttribute("data-action") && event.target.closest(".maandje-wrapper")) {
         berekenPrijs();
+        slaMaandjeOp();
+
     }
 });
 
 const maandje = document.querySelector(".maandje-wrapper");
-//Artikel aan maanddje toevoegen(+aanmaandje knop)
+//Laad maandje of maak lege array
+let opgeslagenMaandje = JSON.parse(localStorage.getItem("maandje")) || [];
+toonMaandjeVanuitStorage();
+
+function toonMaandjeVanuitStorage() {
+    opgeslagenMaandje.forEach(item => {
+        const maandjeItemHTML = `<div class="maandje-item" data-id="${item.id}">
+            <div class="maandje-item__top">
+                <div class="maandje-item__img">
+                    <img src="${item.imgSrc}" alt="">
+                </div>
+                <div class="maandje-item__desc">
+                    <div class="maandje-item__title">${item.naam}</div>
+                    <div class="maandje-item__stuks">${item.aantalSt}</div>
+                    <div class="maandje-item__details">
+                        <div class="items items--small counter-wrapper">
+                            <div class="items-control" data-action="min">-</div>
+                            <div class="items-current" data-counter>${item.teller}</div>
+                            <div class="items-control" data-action="plus">+</div>
+                        </div>
+                        <div class="prijs">
+                            <div class="prijs-currency">${item.prijs}</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+        maandje.insertAdjacentHTML("beforeend", maandjeItemHTML);
+    });
+
+    if (opgeslagenMaandje.length > 0) {
+        document.querySelector("[data-maandje-leeg]").hidden = true;
+        document.getElementById("bestelling-form").hidden = false;
+        document.querySelector("[data-maandje-subTotaal]").hidden = false;
+        document.querySelector("[data-maandje-bezorging]").hidden = false;
+        berekenPrijs();
+    }
+}
+
+function slaMaandjeOp() {
+    const items = document.querySelectorAll(".maandje-item");
+    const maandjeData = [];
+
+    items.forEach(item => { 
+        //maandje invullen van query selectors data
+        maandjeData.push({
+            id: item.dataset.id,
+            naam: item.querySelector(".maandje-item__title").innerText,
+            imgSrc: item.querySelector("img").src,
+            aantalSt: item.querySelector(".maandje-item__stuks").innerText,
+            prijs: item.querySelector(".prijs-currency").innerText,
+            teller: item.querySelector("[data-counter]").innerText
+        });
+    });
+
+    localStorage.setItem("maandje", JSON.stringify(maandjeData));
+}
+
+
+//Artikel aan maandje toevoegen(+aanmaandje knop)
 document.addEventListener("click", function (event) {
     if (event.target.hasAttribute("data-type")) {
         // Zoeken het artikelkaartje
@@ -189,6 +252,8 @@ document.addEventListener("click", function (event) {
         //Teller op kaartje terug op 1 zetten
         artikelKaartje.querySelector("[data-counter]").innerText = "1";
         berekenPrijs();
+        slaMaandjeOp();
+
     }
 });
 
