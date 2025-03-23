@@ -1,7 +1,7 @@
 "use strict";
 leesArtikels();
 async function leesArtikels() {
-    const response = await fetch("https://raw.githubusercontent.com/SofiiaBotteldoorn/BestellingJS/refs/heads/main/artikels.json");
+    const response = await fetch("https://raw.githubusercontent.com/SofiiaBotteldoorn/SushiShop/refs/heads/main/artikels.json");
     if (response.ok) {
         const artikels = await response.json(); //[]met artikels
         verwerkArtikels(artikels);
