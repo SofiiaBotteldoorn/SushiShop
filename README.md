@@ -8,6 +8,8 @@ Een interactieve webpagina waar gebruikers verschillende sushirollen kunnen beki
 Finctionaliteit:
 -  Overzicht van sushirollen met afbeelding, naam en prijs
 -  Teller met plus- en minknoppen
--  Interactief winkelmandje (mogelekheid om artikelen verlagen en verhogen vanuit maandje)
+-  Interactief winkelmandje (mogelekheid om artikelen verlagen en verhogen vanuit maandje) + localStorage
 -  Subtotaal + bezorging + totaalprijs
 -  Responsief ontwerp
+
+https://sofiiabotteldoorn.github.io/SushiShop/
