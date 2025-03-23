@@ -1,0 +1,32 @@
+[{
+    "naam":"Ebifurai roll",
+    "aantal": 6,
+    "prijs": 6.20,
+    "img":"ebi.jpg"
+    },
+    {
+    "naam":"Sunrise roll",
+    "aantal": 11.80,
+    "prijs": 11.20,
+    "img":"sun.jpg"
+    },
+    {
+    "naam":"California roll",
+    "aantal": 6,
+    "prijs": 13.10,
+    "img": "California.jpg"
+    },
+    {
+    "naam":"Krab maki",
+    "aantal": 6,
+    "prijs": 5.80,
+    "img":"krab.jpg"
+    },
+    {
+    "naam":"Komkommer maki",
+    "aantal": 6,
+    "prijs": 5.70,
+    "img":"komkommer.jpg"
+    }
+    ]
+    

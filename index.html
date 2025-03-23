@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+	<title>Happy Rolls</title>
+
+	<link rel="stylesheet" href="libs/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link href="https://fonts.googleapis.com/css?family=Merriweather:300,400,400i,700&amp;subset=cyrillic-ext"
+		rel="stylesheet">
+
+	<script src="js/rolls.js" defer></script>
+</head>
+
+<body>
+	
+	<header class="header">
+		<nav class="topmenu">
+			<ul class="list-unstyled">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Menu</a></li>
+				<li><a href="#">Team</a></li>
+			</ul>
+		</nav>
+		<div class="container text-center">
+			<img src="img/logo/logo.svg" width="92" alt="rolls logo">
+			<div class="display-4">Happy rolls</div>
+			<p class="lead">Yami yami</p>
+		</div>
+	</header>
+
+	<main class="container mb-5">
+		<div class="row">
+
+			<!-- Artikelen-->
+			<section class="col-md-8">
+				<div id="artikelen" class="row artikelen-container">
+					<div id="nietGevonden" hidden class="fout">Niet gevonden.</div>
+					<!-- Hier artikelen dynamisch toegevoegd met script-->
+				</div>
+			</section>
+
+			<!-- Winkelmandje-->
+			<aside class="col-md-4">
+				<div class="mb-4">
+
+					<div class="card-body">
+						<h5 class="card-title">Uw bestelling</h5>
+
+						<div data-maandje-leeg class="alert alert-secondary" role="alert">
+							Maandje is leeg
+						</div>
+
+						<!-- Maandje -->
+						<div class="maandje-wrapper"></div>
+						<!-- // Maandje -->
+
+						<!-- Te Betalen -->
+						<div class=" maandje-totaal">
+							<p data-maandje-subTotaal hidden>
+								<span class="h5" data-maandje-detail="subTotaal">SubTotaal:</span> 
+								<span class="subtotaal-prijs">€ 0.00</span>
+							</p>
+
+							<p data-maandje-bezorging hidden>
+								<span class="h5">Bezorging:</span> 
+								<span class="bezorging">Gratis</span>
+							</p>
+							<p>
+								<span class="h5">Totaal:</span> 
+								<span class="totaal-prijs">€ 0.00</span>
+							</p>
+						</div>
+					</div>
+					<!-- // Te Betalen -->
+
+					<!-- Bestellen -->
+					<div id="bestelling-form" class="card-body border-top text-center" hidden>
+						<form>
+							<button type="submit" class="btn btn-primary w-80 ">Verder met bestelling</button>
+						</form>
+					</div>
+					<!-- // Bestellen -->
+				</div>
+			</aside>
+		</div>
+	</main>
+	<footer class="footer mt-auto py-4  text-white">
+		<div class="container">
+		  <div class="row">
+			<!-- Kolom 1 -->
+			<div class="col-md-3 mb-3">
+			  <h5>Happy Rolls</h5>
+			  <ul class="list-unstyled">
+				<li><b>Adres:</b> Wegisweg 13, <br>9940 Evergem, <br>Oost-Vlaanderen, Belgie </li>
+				<li><b>Telefoon:</b> +32 000-00-00-00</li>
+				<li><b>Email:</b> happy.rolls@gmail.com</li>
+			  </ul> 
+			</div>
+	  
+			<!-- Kolom 2 -->
+			<div class="col-md-3 mb-3">
+			  <h6>Links</h6>
+			  <ul class="list-unstyled">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">Menu</a></li>
+				<li><a href="#">Team</a></li>
+				<li><a href="#">Vacatures</a></li>
+			  </ul>
+			</div>
+	  
+			<!-- Kolom 3 -->
+			<div class="col-md-3 mb-3">
+			  <h6>Klantenservice</h6>
+			  <ul class="list-unstyled">
+				<li><a href="#">Privacybeleid</a></li>
+				<li><a href="#">Algemene voorwaarden</a></li>
+			  </ul>
+			</div>
+	  
+			<!-- Kolom 4 -->
+			<div class="col-md-3 mb-3">
+			  <h6>Volg ons</h6>
+			  <a href="#"><img src="img/facebook.svg" alt="Facebook"></a>
+			  <a href="#"><img src="img/instagram.svg" alt="Instagram"></a>
+			</div>
+		  </div>
+	  
+		  <hr class="border-light">
+		  <div class="text-end small">
+			&copy; Happy Rolls <span id="jaar"></span>
+		  </div>
+		</div>
+	  </footer>
+</body>
+</html>

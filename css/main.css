@@ -1,0 +1,261 @@
+body, html {
+	background-color: #F8F9F9;
+	min-height: 200vh;
+	margin: 0;
+	padding: 0;
+}
+
+h3, h4 {
+	font-family: 'Merriweather', serif;
+
+}
+.header{
+	margin-top: 100px;
+	padding-bottom: 100px;
+}
+.topmenu{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	z-index: 100000;
+	background-color: #EB5A1E;
+}
+
+.topmenu {
+	
+    width: 100%;
+	background-color: #eb5a1e;
+	margin-bottom: 50px;
+}
+
+.topmenu ul {
+	display: flex;
+    margin: 0;
+    padding: 0;
+	list-style: none;
+}
+
+nav.topmenu ul a {
+	display: block;
+	box-sizing: border-box;
+	font-weight: bold;
+	font-size: 1.25em;
+	line-height: 3em;
+	text-align: center;
+	border-right: 1px solid #eceae8;
+    padding-left: 1em;
+    padding-right: 1em;
+	color:#FFF
+}
+nav.topmenu ul li:first-child a {
+    border-left: 1px solid #eceae8;
+}
+.topmenu a:hover {
+	background-color: #c21b1b;
+	transition: 1s;
+	text-decoration: none;
+}
+.card-body {
+	position: relative;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, .125);
+    border-radius: .25rem;
+}
+.product-img {
+	width: 265px;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.item-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+	font-family: 'Merriweather', serif;
+	height: 70px;
+}
+
+.details-wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.items {
+	font-family: 'Merriweather', serif;
+	background: #f2ede7;
+	border-radius: 8px;
+	width: 120px;
+	display: flex;
+	font-size: 18px;
+	height: 30px;
+	overflow: hidden;
+}
+.stuks {
+	margin-bottom: 16px;
+}
+
+.items-control {
+	width: 40px;
+	cursor: pointer;
+	transition: 0.2s ease-in;
+	text-align: center;
+}
+
+.items-control:hover {
+    background: #eb5a1e;
+    color: #FFF;
+}
+
+.items-current {
+	width: 40px;
+}
+
+/* items--small */
+.items.items--small {
+	width: 90px;
+	font-size: 16px;
+	height: 26px;
+	text-align: center;
+}
+
+.items.items--small .items__control {
+	width: 30px;
+}
+
+.items.items--small .items__current {
+	width: 30px;
+}
+
+.prijs {
+	text-align: left;
+}
+
+.prijs-currency {
+	font-size: 1.5rem;
+	font-weight: 600;
+	line-height: 1;
+}
+
+.btn-outline-warning {
+    color: #eb5a1e;
+    border-color: #eb5a1e;
+}
+
+.btn-outline-warning:hover {
+    color: #FFF;
+    background-color: #eb5a1e;
+    border-color: #EB5A1E;
+}
+
+.maandje-item__top {
+	display: flex;
+	align-items: flex-start;
+	padding-bottom: 15px;
+	border-bottom: 1px solid #dee2e6;
+	margin-bottom: 15px;
+}
+
+.maandje-item__img img {
+	max-width: 100px;
+	height: auto;
+}
+
+.maandje-item__desc {
+	padding-top: 15px;
+	padding-left: 15px;
+}
+
+.maandje-item__title {
+	font-family: 'Merriweather', serif;
+	font-size: 16px;
+    line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 5px;
+}
+
+.maandje-item__stuks {
+    color: #6c757d!important;
+    font-size: 80%;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+.maandje-item__details {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.maandje-item__details .prijs-currency {
+	font-size: 18px;
+	margin-left: 15px;
+}
+
+.subtotaal-prijs {
+	color:#6c757d;
+	font-weight: 400;
+}
+
+.maandje-total {
+	font-size: 18px;
+	font-weight: 500;
+}
+
+.free {
+	color: #0EA107;
+}
+
+.totaal-prijs {
+	color:  #EB5A1E;
+	font-weight: bold;
+}
+
+.fout {
+	color: #c21b1b;
+}
+.footer {
+	position: sticky;
+	background-color: #EB5A1E;
+	color: #FFF;
+	padding: 1rem 0;
+}
+
+.footer a {
+	color: #FFF;
+	margin-right: 1rem;
+}
+
+.footer-links a {
+	display: inline-block;
+}
+
+.footer img {
+	vertical-align: middle;
+}
+
+@media (max-width: 576px) {
+	.footer .container {
+		flex-direction: column;
+		text-align: center;
+	}
+	.footer p {
+		margin-top: 1rem;
+	}
+}
+.copy {
+	text-align: right;
+}
