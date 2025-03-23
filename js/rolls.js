@@ -90,7 +90,7 @@ function verwerkArtikels(artikels) {
         artikelenContainer.appendChild(kaartjeDiv);
     }
 };
-//Artikel toevoegen of verwijderen
+//Artikel aantal verhogen/verlagen of artikel verwijderen
 document.addEventListener("click", function (event) {
     let artikelTeller;
     if (event.target.dataset.action === "plus" || event.target.dataset.action === "min") {
@@ -145,7 +145,8 @@ document.addEventListener("click", function (event) {
             prijs: artikelKaartje.querySelector(".prijs").innerText,
             teller: artikelKaartje.querySelector("[data-counter]").innerText
         };
-
+        //zoek artikel op id
+    
         const artikelInMaandje = maandje.querySelector(`[data-id="${artikelInfo.id}"]`);
 
         if (artikelInMaandje) { //als artikel is al in maandje
